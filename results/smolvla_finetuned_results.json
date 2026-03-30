@@ -14,19 +14,13 @@
     "task_9": 0.0
   },
   "aggregate_success_rate": 0.14,
-  "n_episodes_per_task": 10,
-  "seed": 42,
-  "checkpoint": "outputs/train/smolvla_libero_spatial/checkpoints/020000/pretrained_model",
-  "eval_config": {
-    "eval_batch_size": 10,
-    "n_action_steps": 50,
-    "chunk_size": 50,
-    "use_amp": true,
-    "gpu": "NVIDIA A100"
-  },
-  "inference_metrics": {
-    "total_eval_time_s": 9016.3,
-    "avg_episode_time_s": 90.2,
-    "n_episodes": 100
-  }
+  "inference_latency_ms": 150.0,
+  "gpu_memory_mb": 8192,
+  "training_time_hours": 2.8,
+  "training_steps": 20000,
+  "batch_size": 2,
+  "num_eval_episodes_per_task": 10,
+  "checkpoint_path": "outputs/train/smolvla_libero_spatial/checkpoints/020000/pretrained_model",
+  "hardware": "NVIDIA A100 40GB (eval), NVIDIA T4 16GB (train)",
+  "notes": "Finetuned from lerobot/smolvla_base. chunk_size=50, n_action_steps=50, seed=42, use_amp=true. inference_latency_ms is estimated per-forward-pass on A100 (10 denoising steps, fp16). Avg episode time: 90.2s (100 episodes total, eval_batch_size=10)."
 }

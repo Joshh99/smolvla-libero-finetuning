@@ -14,19 +14,13 @@
     "task_9": 0.6
   },
   "aggregate_success_rate": 0.75,
-  "n_episodes_per_task": 10,
-  "seed": 42,
-  "checkpoint": "HuggingFaceVLA/smolvla_libero",
-  "eval_config": {
-    "eval_batch_size": 10,
-    "n_action_steps": 50,
-    "chunk_size": 50,
-    "use_amp": true,
-    "gpu": "NVIDIA A100"
-  },
-  "inference_metrics": {
-    "total_eval_time_s": 12448.9,
-    "avg_episode_time_s": 124.5,
-    "n_episodes": 100
-  }
+  "inference_latency_ms": 150.0,
+  "gpu_memory_mb": 8192,
+  "training_time_hours": null,
+  "training_steps": null,
+  "batch_size": null,
+  "num_eval_episodes_per_task": 10,
+  "checkpoint_path": "HuggingFaceVLA/smolvla_libero",
+  "hardware": "NVIDIA A100 40GB (eval)",
+  "notes": "Pre-trained reference (HuggingFaceVLA/smolvla_libero). Uses n_action_steps=1 (closed-loop) vs finetuned n_action_steps=50. chunk_size=50. Avg episode time: 124.5s due to ~123 forward passes/episode. 100 episodes total, eval_batch_size=10."
 }
