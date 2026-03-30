@@ -1,0 +1,26 @@
+{
+  "model": "smolvla_finetuned_chunk25",
+  "libero_suite": "spatial",
+  "per_task_success_rate": {
+    "task_0": 0.0,
+    "task_1": 0.0,
+    "task_2": 0.333,
+    "task_3": 0.0,
+    "task_4": 0.667,
+    "task_5": 0.0,
+    "task_6": 0.333,
+    "task_7": 0.333,
+    "task_8": 0.0,
+    "task_9": 0.333
+  },
+  "aggregate_success_rate": 0.2,
+  "inference_latency_ms": 150.0,
+  "gpu_memory_mb": 8192,
+  "training_time_hours": 2.8,
+  "training_steps": 20000,
+  "batch_size": 2,
+  "num_eval_episodes_per_task": 3,
+  "checkpoint_path": "outputs/train/ablation_chunk25/checkpoints/020000/pretrained_model",
+  "hardware": "NVIDIA A100 40GB (eval), NVIDIA T4 16GB (train)",
+  "notes": "Ablation: chunk_size=25, n_action_steps=25. Separately trained. 30 episodes (3/task). Flow matching output: 25x32=800 dims. Avg episode time: 97.1s."
+}
