@@ -1,0 +1,32 @@
+{
+  "model": "smolvla_reference",
+  "libero_suite": "spatial",
+  "per_task_success_rate": {
+    "task_0": 0.8,
+    "task_1": 0.9,
+    "task_2": 0.7,
+    "task_3": 0.6,
+    "task_4": 0.7,
+    "task_5": 0.5,
+    "task_6": 0.8,
+    "task_7": 1.0,
+    "task_8": 0.9,
+    "task_9": 0.6
+  },
+  "aggregate_success_rate": 0.75,
+  "n_episodes_per_task": 10,
+  "seed": 42,
+  "checkpoint": "HuggingFaceVLA/smolvla_libero",
+  "eval_config": {
+    "eval_batch_size": 10,
+    "n_action_steps": 50,
+    "chunk_size": 50,
+    "use_amp": true,
+    "gpu": "NVIDIA A100"
+  },
+  "inference_metrics": {
+    "total_eval_time_s": 12448.9,
+    "avg_episode_time_s": 124.5,
+    "n_episodes": 100
+  }
+}
