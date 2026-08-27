@@ -1,0 +1,55 @@
+run:
+  name: baseline_chunk50_20k
+  output_dir: outputs/train/smolvla_libero_spatial
+  seed: 42
+
+model:
+  pretrained_path: lerobot/smolvla_base
+  chunk_size: 50
+  n_action_steps: 50
+  num_steps: 10
+  train_expert_only: true
+  freeze_vision_encoder: true
+  train_state_proj: true
+  num_vlm_layers: 16
+  expert_width_multiplier: 0.75
+  num_expert_layers: -1
+  use_cache: true
+  compile_model: false
+  max_action_dim: 32
+  max_state_dim: 32
+  n_obs_steps: 1
+
+data:
+  repo_id: HuggingFaceVLA/libero
+  task_suite: libero_spatial
+  batch_size: 2
+  image_size: [3, 256, 256]
+  state_dim: 8
+  action_dim: 7
+  resize_with_padding: [512, 512]
+  action_normalization: mean_std
+  state_normalization: mean_std
+  visual_normalization: identity
+
+optimization:
+  steps: 20000
+  use_amp: true
+  learning_rate: 0.0001
+  betas: [0.9, 0.95]
+  epsilon: 0.00000001
+  weight_decay: 0.0000000001
+  grad_clip_norm: 10
+  warmup_steps: 1000
+  decay_steps: 30000
+  final_learning_rate: 0.0000025
+  eval_freq: 0
+  save_freq: 5000
+
+recorded_run:
+  accelerator: Tesla T4
+  accelerator_memory_gb: 14.6
+  elapsed_minutes: 185.8
+  pytorch: 2.10.0+cu128
+  cuda: "12.8"
+  lerobot: "0.5.1"
